@@ -16,7 +16,7 @@
   <a href="  http://deep-planet-9958.heroku.com/">Home</a><br />
   <a href="  http://deep-planet-9958.heroku.com/users/new">Create User</a><br />
   <a href="  http://deep-planet-9958.heroku.com/login">Login</a><br />
-  <% if session[:user_id] %>
+  <% if session[:user_id] && User.count == 0 %>
   <br />
   <%  @admin_flag = 'No' %>
   <%= link_to 'Post and Reply', products_path %><br />

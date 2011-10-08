@@ -25,13 +25,19 @@
 <%= f.label :password_confirmation, 'Confirm' %>:
 <%= f.password_field :password_confirmation, :size => 40 %>
 </div>
-<%  if session[:user_id] %>
+<%  if session[:user_id] && User.count > 0 %>
 <%  if User.find(session[:user_id]).admin == 1 %>
 <div>
 <%= f.label :admin, 'admin' %>:
 <%= f.check_box :admin, :size => 40 %>
 </div>
 <% end %>
+<% end %>
+    <%  if User.count == 0 %>
+<div>
+<%= f.label :admin, 'admin' %>:
+<%= f.check_box :admin, :size => 40 %>
+</div>
 <% end %>
 <div>
 <%= f.submit %>
