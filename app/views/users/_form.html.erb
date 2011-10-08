@@ -33,6 +33,12 @@
 </div>
 <% end %>
 <% end %>
+    <%  if User.count == 0 %>
+<div>
+<%= f.label :admin, 'admin' %>:
+<%= f.check_box :admin, :size => 40 %>
+</div>
+<% end %>
 <div>
 <%= f.submit %>
 </div>
